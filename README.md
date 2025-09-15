@@ -23,3 +23,9 @@ Enfin, il pourrait être pertinent de faire un lien entre un dispositif d'aide e
 ## Format des fichiers
 
 Le fichier doit être au format csv, encodé en UTF-8. L'en-tête de colonne sur la première ligne est obligatoire.
+
+## Gestion du schéma
+
+La gestion du schéma est centralisée sur le fichier grist suivant : https://grist.numerique.gouv.fr/o/docs/uC2J5niqzb48/Gestion-des-schemas-des-dispositifs-daide
+Ce fichier est librement accessible en lecture. Vous y trouverez notamment les listes de valeurs autorisées pour les champs sur lesquels des contraintes ont été imposées. 
+Vous y trouverez également un lien vers un channel de discussion si vous souhaitez participer au développement de ce schéma. 

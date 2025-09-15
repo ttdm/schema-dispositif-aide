@@ -156,7 +156,7 @@
     {
       "name": "porteurs",
       "title": "Porteurs",
-      "description": "Liste des acteurs impliqués dans la mise en oeuvre du dispositif ainsi que leurs rôles. Format : { nom , siren, rôles[] } [] La liste des rôles est disponible dans la table dédiée : https: //grist.numerique.gouv.fr/o/docs/uC2J5niqzb48/Gestion-des-schemas-des-dispositifs-daide/p/7. Le format des noms est A DEFINIR plus précisément. La liste des noms déjà utilisés ainsi que leurs SIREN doit être tenue à jour dans la table dédiée pour éviter les doublons : https://grist.numerique.gouv.fr/o/docs/uC2J5niqzb48/Gestion-des-schemas-des-dispositifs-daide/p/6.",
+      "description": "Liste des acteurs impliqués dans la mise en oeuvre du dispositif ainsi que leurs rôles. Format : { nom , siren, rôles[] } [] La liste des rôles est disponible dans la table dédiée : https: //grist.numerique.gouv.fr/o/docs/uC2J5niqzb48/Gestion-des-schemas-des-dispositifs-daide/p/7.La liste des noms déjà utilisés ainsi que leurs SIREN doit être tenue à jour dans la table dédiée pour éviter les doublons : https://grist.numerique.gouv.fr/o/docs/uC2J5niqzb48/Gestion-des-schemas-des-dispositifs-daide/p/6. Si possible, le nom et le Siren doivent être identiques à ceux renvoyés par l'API recherche entreprise.",
       "example": "[{ nom: 'ADEME', siren: '385290309', roles: [ 'instructeur' ]}, { nom: 'BPIFRANCE (BPIFRANCE)', siren: '320252489', roles: [ 'financeur' ]}]",
       "type": "string",
       "constraints": {
@@ -169,16 +169,6 @@
       "description": "Programmes parents et régimes d'aides auxquels appartiennent le dispositif. La liste des valeurs déjà utilisées doit être tenue à jour dans la table dédiée pour éviter les doublons : https://grist.numerique.gouv.fr/o/docs/uC2J5niqzb48/Gestion-des-schemas-des-dispositifs-daide/p/11 . Format : valeurs autorisées séparées par des pipes : valeur1|valeur2 ",
       "example": "Fonds Chaleur|Fonds vert 2024",
       "type": "string"
-    },
-    {
-      "name": "referents_internes",
-      "title": "Référents internes",
-      "description": "Référents internes pour se renseigner en tant qu'acteurs publics sur le dispositif. Contact privé, pour usage administratif, ne pas utiliser ce contact comme contact de référence pour les bénéficiaires. Format : { nom, mail , téléphone } []",
-      "example": "[{ nom: 'Jeanne Dupont', mail: 'jeanne@exemple.gouv.fr', telephone: '0123456789' }, { nom: 'Jean Dupont', mail: 'jean@exemple.gouv.fr', telephone: '0123456789' } ]",
-      "type": "string",
-      "constraints": {
-        "required": true
-      }
     },
     {
       "name": "url_source",
