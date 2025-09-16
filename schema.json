@@ -109,13 +109,14 @@
       "example": "Accélérateur décarbonation",
       "type": "string",
       "constraints": {
-        "required": true
+        "required": true,
+        "maxLength": 100
       }
     },
     {
       "name": "promesse",
       "title": "Promesse",
-      "description": "La promesse a pour objectif de : - résumer le dispositif de manière claire & simple en quelques mots - distinguer les offres les unes des autres.Formulation: - 6 à 15 mots. - La promesse commence par un verbe à l'impératif. - rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse `vous` `votre entreprise` - pas de point à la fin de la promesse (sauf point d'exclamation)",
+      "description": "La promesse a pour objectif de : - résumer le dispositif de manière claire & simple en quelques mots - distinguer les offres les unes des autres. Formulation: - 6 à 15 mots. - La promesse commence par un verbe à l'impératif. - rédigée sous l'angle du bénéfice utilisateur, s'adressant à lui par le pluriel de politesse `vous` `votre entreprise` - pas de point à la fin de la promesse (sauf point d'exclamation)",
       "example": "Développez votre stratégie bas carbone et mettez en œuvre votre plan de transition",
       "type": "string",
       "constraints": {
@@ -136,7 +137,7 @@
     {
       "name": "eligibilite",
       "title": "Critères d’éligibilité",
-      "description": "Ces critères d’éligibilité ont pour vocations d'être lus et compris par des agents publics. Pour cibler automatiquement et efficacement vers les cibles, des critères d'éligibilité avec des formats plus précis seront proposées dans des schéma annexes. Renseigner ces critères d'éligibilité sous forme d'une liste et dans la mesure du possible, ne mettre qu'un critère par item de la liste.",
+      "description": "Ces critères d’éligibilité ont pour vocations d'être lus et compris par des agents publics. Pour cibler automatiquement et efficacement vers les cibles, des critères d'éligibilité avec des formats plus précis seront proposées dans des schéma annexes. Renseigner ces critères d'éligibilité sous forme d'une liste de bullet points et dans la mesure du possible, ne mettre qu'un critère par item de la liste.",
       "example": "• Le porteur du projet doit être, soit un club affilié à la F.F.F., soit une collectivité locale en collaboration avec un club support affilié à la F.F.F. ; \n • Le terrain doit être conforme au cahier des charges technique fédéral relatif à la réalisation d'un terrain de Futsal extérieur – Edition avril 2017; \n• La date de commencement des travaux ne doit pas être antérieure de plus de 3 mois à celle du dépôt du dossier au District d'appartenance ; \n • L'équipement projeté doit être situé obligatoirement au sein d'un complexe sportif utilisé par le club support dont au moins une installation est classée au niveau 6 minimum ou adossé à un gymnase classé futsal 4 minimum équipé de deux vestiaires de minimum chacun 14 m2, douches et sanitaires avec un accès direct piétons ; \n • Le porteur de projet doit impérativement présenter un projet d'utilisation des installations envisagées dans le respect des attentes de la F.F.F. ; \n • Le maître d'ouvrage doit réaliser son opération dans un délai de 24 mois à compter de la date d'attribution de la subvention par le Bureau Exécutif de la Ligue du Football Amateur",
       "type": "string",
       "constraints": {
@@ -187,7 +188,7 @@
       "type": "string",
       "constraints": {
         "required": true,
-        "pattern": "(?:(?:^|\\|)(professionnels|particuliers|associations|secteur public))+$"
+        "pattern": "^(professionnels|particuliers|associations|secteur public)(\\|(professionnels|particuliers|associations|secteur public))*$"
       }
     },
     {
@@ -197,15 +198,19 @@
       "example": "PAYS-99100 pour la France entière    OU    REG-84|DEP-05 pour la région Auvergne-Rhône-Alpes et le département des Hautes-Alpes",
       "type": "string",
       "constraints": {
-        "required": true
+        "required": true,
+        "pattern": "^[A-Z]+-\\d+(\\|[A-Z]+-\\d+)*$"
       }
     },
     {
       "name": "eligibilite_geographique_exclusions",
       "title": "Couverture géographique de l’aide - exclusions",
       "description": "Aires géographique exclues du dispositif. Cette propriété a précédence sur les \"eligibilite_geographique\" s'il y a recouvrement. Champ à écrire en utilisant le formalisme du Code Officiel Géographique : https: //www.insee.fr/fr/information/5230987. Séparer chaque code COG par des pipes.",
-      "example": "DEP01|COM83141",
-      "type": "string"
+      "example": "DEP-01|COM-83141",
+      "type": "string",
+      "constraints": {
+        "pattern": "^[A-Z]+-\\d+(\\|[A-Z]+-\\d+)*$"
+      }
     },
     {
       "name": "date_ouverture",
@@ -224,7 +229,7 @@
     {
       "name": "date_mise_a_jour",
       "title": "Date de dernière mise à jour",
-      "description": "Dernière date de mise à jour de l’aide dans ce schéma de données, au format ISO 8601. Champ à remplissage automatique dans la majorité des cas d'usage.",
+      "description": "Dernière date de mise à jour de l’aide dans les données, au format ISO 8601. Champ à remplissage automatique dans la majorité des cas d'usage.",
       "example": "2025-10-15T15:00:00Z",
       "type": "datetime",
       "constraints": {
