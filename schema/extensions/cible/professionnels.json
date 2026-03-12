@@ -1,7 +1,7 @@
 {
   "name": "professionnels",
-  "title": "Professionnels Extension",
-  "description": "Extension for business professionals (entreprises, indépendants) beneficiaries",
+  "title": "Extension du schéma des dispositifs d'aides pour les aides dédiés aux professionnels",
+  "description": "Ajouts de champs permettant de préciser l'égibilité des entreprises aux différents dispositifs d'aides",
   "fields": [
     {
       "name": "eligibilite_effectifs_minimum",
